@@ -99,20 +99,20 @@ public static void addSignUpData(SignUpData signUpData) {
         jPanel1.add(jButton1);
         jButton1.setBounds(430, 320, 100, 40);
 
-        jLabel4.setText("I don't have an account");
+        jLabel4.setText("Add Employees");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(430, 400, 140, 16);
+        jLabel4.setBounds(430, 400, 90, 16);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Sign Up");
+        jButton2.setText("ADD");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(580, 390, 90, 40);
+        jButton2.setBounds(540, 390, 90, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,23 +143,15 @@ public static void addSignUpData(SignUpData signUpData) {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String enteredEmail = jTextField1.getText();
         char[] enteredPassword = jPasswordField1.getPassword();
+        ItemList ItemListgo=new ItemList();
+        ItemListgo.pack();
+        this.dispose();
+        ItemListgo.setVisible(true);        
+        ItemListgo.setLocationRelativeTo(null);
+        
 
-        if (enteredEmail.isEmpty() || enteredPassword.length == 0) {
-            JOptionPane.showMessageDialog(this, "Please enter both email and password.", "Input Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            boolean isValidCredentials = checkCredentials(enteredEmail, enteredPassword);
+        
 
-            if (isValidCredentials) {
-                // Successful login
-                ItemList itemListFrame = new ItemList();
-                itemListFrame.pack();
-                itemListFrame.setVisible(true);
-                itemListFrame.setLocationRelativeTo(null);
-                this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(this, "Invalid credentials. Please try again.", "Login Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
     }
 
 
